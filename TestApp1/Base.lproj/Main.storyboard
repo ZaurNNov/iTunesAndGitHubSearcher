@@ -27,7 +27,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="albumTableViewCell" rowHeight="100" id="q1l-Rx-fZf" customClass="CellTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="q1l-Rx-fZf" customClass="CellTableViewCell">
                                 <rect key="frame" x="0.0" y="72" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q1l-Rx-fZf" id="7RR-jL-2Bh">
@@ -62,6 +62,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="albumImageView" destination="x9n-eg-hzx" id="59g-59-qmk"/>
+                                    <outlet property="albumNameLabel" destination="tVN-gb-NLp" id="Q2a-lj-4eq"/>
+                                    <outlet property="artistLabel" destination="2BI-vA-6rb" id="7cL-51-nhP"/>
+                                    <outlet property="trackName" destination="WJm-9W-A85" id="WaC-Re-L7L"/>
                                     <segue destination="ATT-36-gwr" kind="show" trigger="accessoryAction" id="TzV-GJ-QfW"/>
                                 </connections>
                             </tableViewCell>
@@ -90,7 +94,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="542" y="-1054"/>
+            <point key="canvasLocation" x="926" y="-1052"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -176,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVY-gH-Xo1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986" y="-1054"/>
+            <point key="canvasLocation" x="1774" y="-1052"/>
         </scene>
         <!--NC-->
         <scene sceneID="HDt-6m-cG1">
