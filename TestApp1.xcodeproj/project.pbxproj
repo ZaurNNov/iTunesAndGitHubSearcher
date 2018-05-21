@@ -16,6 +16,9 @@
 		CE0842C020B2B7B5009ED951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842BF20B2B7B5009ED951 /* main.m */; };
 		CE0842E020B2D879009ED951 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842DF20B2D879009ED951 /* DetailViewController.m */; };
 		CE0842E320B2DA83009ED951 /* CellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842E220B2DA83009ED951 /* CellTableViewCell.m */; };
+		CE0842E720B30F0F009ED951 /* iTunesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842E620B30F0F009ED951 /* iTunesRequest.m */; };
+		CE0842EA20B319EB009ED951 /* iTunesJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842E920B319EB009ED951 /* iTunesJSONParser.m */; };
+		CE0842ED20B31B1B009ED951 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842EC20B31B1B009ED951 /* Album.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,12 @@
 		CE0842DF20B2D879009ED951 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		CE0842E120B2DA83009ED951 /* CellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellTableViewCell.h; sourceTree = "<group>"; };
 		CE0842E220B2DA83009ED951 /* CellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellTableViewCell.m; sourceTree = "<group>"; };
+		CE0842E520B30F0F009ED951 /* iTunesRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunesRequest.h; sourceTree = "<group>"; };
+		CE0842E620B30F0F009ED951 /* iTunesRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesRequest.m; sourceTree = "<group>"; };
+		CE0842E820B319EB009ED951 /* iTunesJSONParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunesJSONParser.h; sourceTree = "<group>"; };
+		CE0842E920B319EB009ED951 /* iTunesJSONParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesJSONParser.m; sourceTree = "<group>"; };
+		CE0842EB20B31B1B009ED951 /* Album.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		CE0842EC20B31B1B009ED951 /* Album.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +76,7 @@
 		CE0842AC20B2B7B4009ED951 /* TestApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				CE0842E420B30ED9009ED951 /* request */,
 				CE0842AD20B2B7B4009ED951 /* AppDelegate.h */,
 				CE0842AE20B2B7B4009ED951 /* AppDelegate.m */,
 				CE0842B020B2B7B4009ED951 /* iTunesViewController.h */,
@@ -84,6 +94,19 @@
 				CE0842E220B2DA83009ED951 /* CellTableViewCell.m */,
 			);
 			path = TestApp1;
+			sourceTree = "<group>";
+		};
+		CE0842E420B30ED9009ED951 /* request */ = {
+			isa = PBXGroup;
+			children = (
+				CE0842E520B30F0F009ED951 /* iTunesRequest.h */,
+				CE0842E620B30F0F009ED951 /* iTunesRequest.m */,
+				CE0842E820B319EB009ED951 /* iTunesJSONParser.h */,
+				CE0842E920B319EB009ED951 /* iTunesJSONParser.m */,
+				CE0842EB20B31B1B009ED951 /* Album.h */,
+				CE0842EC20B31B1B009ED951 /* Album.m */,
+			);
+			path = request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,10 +179,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0842E720B30F0F009ED951 /* iTunesRequest.m in Sources */,
 				CE0842E020B2D879009ED951 /* DetailViewController.m in Sources */,
 				CE0842B520B2B7B5009ED951 /* SecondViewController.m in Sources */,
 				CE0842AF20B2B7B4009ED951 /* AppDelegate.m in Sources */,
+				CE0842EA20B319EB009ED951 /* iTunesJSONParser.m in Sources */,
 				CE0842C020B2B7B5009ED951 /* main.m in Sources */,
+				CE0842ED20B31B1B009ED951 /* Album.m in Sources */,
 				CE0842B220B2B7B4009ED951 /* iTunesViewController.m in Sources */,
 				CE0842E320B2DA83009ED951 /* CellTableViewCell.m in Sources */,
 			);
