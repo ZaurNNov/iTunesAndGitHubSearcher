@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		CE0842AF20B2B7B4009ED951 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842AE20B2B7B4009ED951 /* AppDelegate.m */; };
-		CE0842B220B2B7B4009ED951 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842B120B2B7B4009ED951 /* FirstViewController.m */; };
+		CE0842B220B2B7B4009ED951 /* iTunesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842B120B2B7B4009ED951 /* iTunesViewController.m */; };
 		CE0842B520B2B7B5009ED951 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842B420B2B7B5009ED951 /* SecondViewController.m */; };
 		CE0842B820B2B7B5009ED951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0842B620B2B7B5009ED951 /* Main.storyboard */; };
 		CE0842BA20B2B7B5009ED951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0842B920B2B7B5009ED951 /* Assets.xcassets */; };
 		CE0842BD20B2B7B5009ED951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0842BB20B2B7B5009ED951 /* LaunchScreen.storyboard */; };
 		CE0842C020B2B7B5009ED951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842BF20B2B7B5009ED951 /* main.m */; };
+		CE0842E020B2D879009ED951 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842DF20B2D879009ED951 /* DetailViewController.m */; };
+		CE0842E320B2DA83009ED951 /* CellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842E220B2DA83009ED951 /* CellTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE0842AA20B2B7B4009ED951 /* TestApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0842AD20B2B7B4009ED951 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE0842AE20B2B7B4009ED951 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CE0842B020B2B7B4009ED951 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		CE0842B120B2B7B4009ED951 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		CE0842B020B2B7B4009ED951 /* iTunesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunesViewController.h; sourceTree = "<group>"; };
+		CE0842B120B2B7B4009ED951 /* iTunesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesViewController.m; sourceTree = "<group>"; };
 		CE0842B320B2B7B5009ED951 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		CE0842B420B2B7B5009ED951 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		CE0842B720B2B7B5009ED951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,6 +31,10 @@
 		CE0842BC20B2B7B5009ED951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0842BE20B2B7B5009ED951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0842BF20B2B7B5009ED951 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE0842DE20B2D879009ED951 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		CE0842DF20B2D879009ED951 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		CE0842E120B2DA83009ED951 /* CellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellTableViewCell.h; sourceTree = "<group>"; };
+		CE0842E220B2DA83009ED951 /* CellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +69,8 @@
 			children = (
 				CE0842AD20B2B7B4009ED951 /* AppDelegate.h */,
 				CE0842AE20B2B7B4009ED951 /* AppDelegate.m */,
-				CE0842B020B2B7B4009ED951 /* FirstViewController.h */,
-				CE0842B120B2B7B4009ED951 /* FirstViewController.m */,
+				CE0842B020B2B7B4009ED951 /* iTunesViewController.h */,
+				CE0842B120B2B7B4009ED951 /* iTunesViewController.m */,
 				CE0842B320B2B7B5009ED951 /* SecondViewController.h */,
 				CE0842B420B2B7B5009ED951 /* SecondViewController.m */,
 				CE0842B620B2B7B5009ED951 /* Main.storyboard */,
@@ -72,6 +78,10 @@
 				CE0842BB20B2B7B5009ED951 /* LaunchScreen.storyboard */,
 				CE0842BE20B2B7B5009ED951 /* Info.plist */,
 				CE0842BF20B2B7B5009ED951 /* main.m */,
+				CE0842DE20B2D879009ED951 /* DetailViewController.h */,
+				CE0842DF20B2D879009ED951 /* DetailViewController.m */,
+				CE0842E120B2DA83009ED951 /* CellTableViewCell.h */,
+				CE0842E220B2DA83009ED951 /* CellTableViewCell.m */,
 			);
 			path = TestApp1;
 			sourceTree = "<group>";
@@ -146,10 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0842E020B2D879009ED951 /* DetailViewController.m in Sources */,
 				CE0842B520B2B7B5009ED951 /* SecondViewController.m in Sources */,
 				CE0842AF20B2B7B4009ED951 /* AppDelegate.m in Sources */,
 				CE0842C020B2B7B5009ED951 /* main.m in Sources */,
-				CE0842B220B2B7B4009ED951 /* FirstViewController.m in Sources */,
+				CE0842B220B2B7B4009ED951 /* iTunesViewController.m in Sources */,
+				CE0842E320B2DA83009ED951 /* CellTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
