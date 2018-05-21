@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CellTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *imageLogoCell;
-@property (weak, nonatomic) IBOutlet UILabel *firstLabelCell;
-@property (weak, nonatomic) IBOutlet UILabel *secondLabelCell;
+
+@property (weak, nonatomic) IBOutlet UIImageView *albumImageView;
+@property (weak, nonatomic) IBOutlet UILabel *albumNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *artistLabel;
+@property (weak, nonatomic) IBOutlet UILabel *trackName;
 
 @end

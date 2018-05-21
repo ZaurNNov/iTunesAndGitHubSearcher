@@ -10,6 +10,7 @@
 
 @interface DetailViewController ()
 
+
  @property (weak, nonatomic) IBOutlet UIImageView *headShotImageView;
  @property (weak, nonatomic) IBOutlet UILabel *trackNameLabel;
  @property (weak, nonatomic) IBOutlet UILabel *albumNameLabel;

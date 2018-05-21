@@ -27,7 +27,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="albumTableViewCell" rowHeight="100" id="q1l-Rx-fZf" customClass="SWAlbumTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="albumTableViewCell" rowHeight="100" id="q1l-Rx-fZf" customClass="CellTableViewCell">
                                 <rect key="frame" x="0.0" y="72" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q1l-Rx-fZf" id="7RR-jL-2Bh">
@@ -39,22 +39,22 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVN-gb-NLp">
-                                            <rect key="frame" x="76" y="19" width="236" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <rect key="frame" x="76" y="19" width="210" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BI-vA-6rb">
-                                            <rect key="frame" x="76" y="39" width="236" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <rect key="frame" x="76" y="39" width="210" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJm-9W-A85">
-                                            <rect key="frame" x="76" y="58" width="236" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <rect key="frame" x="76" y="58" width="210" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -90,7 +90,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="983" y="-1054"/>
+            <point key="canvasLocation" x="542" y="-1054"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -159,6 +159,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="YlA-LZ-q6p" secondAttribute="centerX" id="lXu-c2-ayJ"/>
+                            <constraint firstItem="YlA-LZ-q6p" firstAttribute="top" secondItem="q6x-RU-pdP" secondAttribute="top" constant="8" id="npO-Tf-ZwA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q6x-RU-pdP"/>
                     </scrollView>
@@ -167,8 +168,7 @@
                     <connections>
                         <outlet property="albumNameLabel" destination="LFf-jc-JhH" id="E9Z-5v-QWY"/>
                         <outlet property="artistNameLabel" destination="i2r-KC-Skx" id="oFZ-4g-qfQ"/>
-                        <outlet property="headShotImageView" destination="YlA-LZ-q6p" id="VTe-zz-MLD"/>
-                        <outlet property="logoImageView" destination="YlA-LZ-q6p" id="ucx-05-LT2"/>
+                        <outlet property="headShotImageView" destination="YlA-LZ-q6p" id="1tL-tk-bWM"/>
                         <outlet property="priceNameLabel" destination="u0F-Vb-3dx" id="76G-rR-mIp"/>
                         <outlet property="releaseDateLabel" destination="8ka-RO-vBT" id="7PN-dE-J7k"/>
                         <outlet property="trackNameLabel" destination="ggo-Yi-mMk" id="D7J-Jg-KYo"/>
@@ -176,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oVY-gH-Xo1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="-1054"/>
+            <point key="canvasLocation" x="986" y="-1054"/>
         </scene>
         <!--NC-->
         <scene sceneID="HDt-6m-cG1">
@@ -195,7 +195,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGm-3W-Ohi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-834" y="-768"/>
+            <point key="canvasLocation" x="-399" y="-769"/>
         </scene>
     </scenes>
 </document>
