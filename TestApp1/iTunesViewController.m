@@ -22,6 +22,8 @@
 @property (nonatomic) NSArray *searchResults;
 @property (nonatomic) NSTimer *timer;
 
+@property (nonatomic) NSString *searchLetter;
+
 @end
 
 @implementation iTunesViewController
@@ -49,11 +51,14 @@
 #pragma mark - Refresh
 
 - (void)refresh {
-    [iTunesRequest downloadDataFromSearchTerms:@"Station" withCompetionBlock:^(BOOL success, NSArray *albums) {
+    
+    self.searchLetter = @"keynote";
+    
+    [iTunesRequest downloadDataFromSearchTerms:self.searchLetter withCompetionBlock:^(BOOL success, NSArray *albums) {
         
         if (success) {
             self.albums = albums;
-             [self loadForAlbums];
+            [self loadForAlbums];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
@@ -61,7 +66,6 @@
         } else {
             NSLog(@"Error refresh:  %@", NSStringFromSelector(_cmd));
         }
-        
     }];
 }
      
@@ -82,7 +86,6 @@
             });
         }];
     }
-    
 }
 
 #pragma mark - UITableViewData
@@ -98,11 +101,22 @@
         cell = [[CellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     
-    Album *album = [self.albums objectAtIndex:indexPath.row];
-    cell.albumNameLabel.text = album.albumName;
-    cell.artistLabel.text = album.artistName;
-    cell.trackName.text = album.trackName;
-    cell.albumImageView.image = album.image;
+//    if () {
+        // Hack prepare for search
+        
+//        Album *album = [self.searchResults objectAtIndex:indexPath.row];
+//        cell.albumNameLabel.text = album.albumName;
+//        cell.artistLabel.text = album.artistName;
+//        cell.trackName.text = album.trackName;
+//        cell.albumImageView.image = album.image;
+        
+//    } else {
+        Album *album = [self.albums objectAtIndex:indexPath.row];
+        cell.albumNameLabel.text = album.albumName;
+        cell.artistLabel.text = album.artistName;
+        cell.trackName.text = album.trackName;
+        cell.albumImageView.image = album.image;
+//    }
     
     return cell;
 }
@@ -112,7 +126,18 @@
     return 100.f;
 }
 
-// Search delegate
+#pragma mark - Search
+// not ready
+
+
+//#pragma mark - Seque
+////iTunesDetail
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    static sequeID
+//    if (segue.identifier isEqualToString:@"iTunesDetail") {
+//        <#statements#>
+//    }
+//}
 
 
 @end
