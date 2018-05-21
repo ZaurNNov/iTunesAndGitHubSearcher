@@ -8,27 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		CE0842AF20B2B7B4009ED951 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842AE20B2B7B4009ED951 /* AppDelegate.m */; };
-		CE0842B220B2B7B4009ED951 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842B120B2B7B4009ED951 /* FirstViewController.m */; };
-		CE0842B520B2B7B5009ED951 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842B420B2B7B5009ED951 /* SecondViewController.m */; };
 		CE0842B820B2B7B5009ED951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0842B620B2B7B5009ED951 /* Main.storyboard */; };
 		CE0842BA20B2B7B5009ED951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0842B920B2B7B5009ED951 /* Assets.xcassets */; };
 		CE0842BD20B2B7B5009ED951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0842BB20B2B7B5009ED951 /* LaunchScreen.storyboard */; };
 		CE0842C020B2B7B5009ED951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842BF20B2B7B5009ED951 /* main.m */; };
+		CE0842C820B2CA9D009ED951 /* iTunesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842C720B2CA9D009ED951 /* iTunesVC.m */; };
+		CE0842CB20B2CAB7009ED951 /* GitHubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842CA20B2CAB7009ED951 /* GitHubVC.m */; };
+		CE0842D120B2CB3D009ED951 /* ContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842D020B2CB3D009ED951 /* ContentTableViewCell.m */; };
+		CE0842D420B2CB6F009ED951 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842D320B2CB6F009ED951 /* DetailViewController.m */; };
+		CE0842D720B2CDC9009ED951 /* SearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842D620B2CDC9009ED951 /* SearchTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE0842AA20B2B7B4009ED951 /* TestApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0842AD20B2B7B4009ED951 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE0842AE20B2B7B4009ED951 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CE0842B020B2B7B4009ED951 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		CE0842B120B2B7B4009ED951 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		CE0842B320B2B7B5009ED951 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		CE0842B420B2B7B5009ED951 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		CE0842B720B2B7B5009ED951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE0842B920B2B7B5009ED951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0842BC20B2B7B5009ED951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0842BE20B2B7B5009ED951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0842BF20B2B7B5009ED951 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE0842C620B2CA9D009ED951 /* iTunesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunesVC.h; sourceTree = "<group>"; };
+		CE0842C720B2CA9D009ED951 /* iTunesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesVC.m; sourceTree = "<group>"; };
+		CE0842C920B2CAB7009ED951 /* GitHubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitHubVC.h; sourceTree = "<group>"; };
+		CE0842CA20B2CAB7009ED951 /* GitHubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitHubVC.m; sourceTree = "<group>"; };
+		CE0842CF20B2CB3D009ED951 /* ContentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentTableViewCell.h; sourceTree = "<group>"; };
+		CE0842D020B2CB3D009ED951 /* ContentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentTableViewCell.m; sourceTree = "<group>"; };
+		CE0842D220B2CB6F009ED951 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		CE0842D320B2CB6F009ED951 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		CE0842D520B2CDC9009ED951 /* SearchTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTableView.h; sourceTree = "<group>"; };
+		CE0842D620B2CDC9009ED951 /* SearchTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,15 +72,21 @@
 			children = (
 				CE0842AD20B2B7B4009ED951 /* AppDelegate.h */,
 				CE0842AE20B2B7B4009ED951 /* AppDelegate.m */,
-				CE0842B020B2B7B4009ED951 /* FirstViewController.h */,
-				CE0842B120B2B7B4009ED951 /* FirstViewController.m */,
-				CE0842B320B2B7B5009ED951 /* SecondViewController.h */,
-				CE0842B420B2B7B5009ED951 /* SecondViewController.m */,
 				CE0842B620B2B7B5009ED951 /* Main.storyboard */,
 				CE0842B920B2B7B5009ED951 /* Assets.xcassets */,
 				CE0842BB20B2B7B5009ED951 /* LaunchScreen.storyboard */,
 				CE0842BE20B2B7B5009ED951 /* Info.plist */,
 				CE0842BF20B2B7B5009ED951 /* main.m */,
+				CE0842C620B2CA9D009ED951 /* iTunesVC.h */,
+				CE0842C720B2CA9D009ED951 /* iTunesVC.m */,
+				CE0842C920B2CAB7009ED951 /* GitHubVC.h */,
+				CE0842CA20B2CAB7009ED951 /* GitHubVC.m */,
+				CE0842D220B2CB6F009ED951 /* DetailViewController.h */,
+				CE0842D320B2CB6F009ED951 /* DetailViewController.m */,
+				CE0842CF20B2CB3D009ED951 /* ContentTableViewCell.h */,
+				CE0842D020B2CB3D009ED951 /* ContentTableViewCell.m */,
+				CE0842D520B2CDC9009ED951 /* SearchTableView.h */,
+				CE0842D620B2CDC9009ED951 /* SearchTableView.m */,
 			);
 			path = TestApp1;
 			sourceTree = "<group>";
@@ -146,10 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0842B520B2B7B5009ED951 /* SecondViewController.m in Sources */,
+				CE0842CB20B2CAB7009ED951 /* GitHubVC.m in Sources */,
 				CE0842AF20B2B7B4009ED951 /* AppDelegate.m in Sources */,
 				CE0842C020B2B7B5009ED951 /* main.m in Sources */,
-				CE0842B220B2B7B4009ED951 /* FirstViewController.m in Sources */,
+				CE0842D120B2CB3D009ED951 /* ContentTableViewCell.m in Sources */,
+				CE0842D720B2CDC9009ED951 /* SearchTableView.m in Sources */,
+				CE0842C820B2CA9D009ED951 /* iTunesVC.m in Sources */,
+				CE0842D420B2CB6F009ED951 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
