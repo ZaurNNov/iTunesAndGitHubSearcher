@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Album.h"
+
 
 @interface DetailViewController : UIViewController
 
-@property (nonatomic, copy) NSString *trackName;
-@property (nonatomic, copy) NSString *albumName;
-@property (nonatomic, copy) NSString *artistName;
-@property (nonatomic, copy) NSString *priceName;
-@property (nonatomic, copy) NSString *releaseDate;
-@property (nonatomic, copy) UIImage *headshotImage;
+@property (nonatomic) Album *albumShared;
+
 
 @end

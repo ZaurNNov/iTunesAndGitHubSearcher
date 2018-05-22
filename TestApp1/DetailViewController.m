@@ -23,15 +23,41 @@
 
 @implementation DetailViewController
 
+
 -(void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = UIColor.whiteColor;
+    if (self.navigationController) {
+        self.navigationController.navigationBarHidden = NO;
+    }
     
-    self.headShotImageView.image = self.headshotImage;
-    self.trackNameLabel.text = [self.trackName copy];
-    self.albumNameLabel.text = [self.albumName copy];
-    self.artistNameLabel.text = [self.artistName copy];
-    self.priceNameLabel.text = [self.priceName copy];
-    self.releaseDateLabel.text = [self.releaseDate copy];
+    Album *al = self.albumShared;
+    if (al) {
+        self.headShotImageView.image = al.image;
+        self.trackNameLabel.text = al.trackName;
+        self.albumNameLabel.text = al.albumName;
+        self.artistNameLabel.text = al.artistName;
+        self.priceNameLabel.text = al.priceString;
+        self.releaseDateLabel.text = [self releaseDateFormattedString:al];
+        
+        self.title = al.trackName;
+    }
+}
+
+-(NSString *)releaseDateFormattedString:(Album *)releaseAlbumStr {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.dateFormat = @"yyyy-dd-MM'T'HH:mm:ss'Z'";
+    NSDate *utc = [df dateFromString:releaseAlbumStr.releaseDateString];
+    df.timeZone = [NSTimeZone systemTimeZone];
+    
+    [df setDateFormat:@"dd/MM/yyyy"];
+    NSString *local = [df stringFromDate:utc];
+    return local;
+}
+
+-(IBAction)dissmissWindow:(id)sender {
+    //
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 @end
