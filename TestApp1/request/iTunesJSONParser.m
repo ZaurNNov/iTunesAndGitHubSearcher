@@ -24,7 +24,7 @@
         
         NSString *artistName = jsonElement[@"artistName"];
         NSString *albumName = jsonElement[@"collectionName"];
-        NSString *photoURL = jsonElement[@"artworkUrl60"];
+        NSString *photoURL = jsonElement[@"artworkUrl100"];
         NSString *trackName = jsonElement[@"trackName"];
         NSString *priceString = [NSString stringWithFormat:@"%@ %@", jsonElement[@"collectionPrice"], jsonElement[@"currency"]];
         NSString *releaseDateString = jsonElement[@"releaseDate"];
