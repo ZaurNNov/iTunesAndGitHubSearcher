@@ -7,14 +7,8 @@
 //
 
 #import "AppDelegate.h"
-/*
-#import "iTunesRequest.h"
-#import "Album.h"
- */
 
 @interface AppDelegate ()
-
-//@property (nonatomic, copy) Album *albums;
 
 @end
 
@@ -24,28 +18,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
-    // test
-    //[self refresh];
     return YES;
 }
 
-/*
-// test
-- (void)refresh {
-    [iTunesRequest downloadDataFromSearchTerms:@"Station" withCompetionBlock:^(BOOL success, NSArray *albums) {
-        if (success) {
-            
-            self.albums = albums;
-            
-            for (Album *album in self.albums) {
-                NSLog(@"%@", album.trackName);
-            }
-        } else {
-            NSLog(@"Error");
-        }
-    }];
-}
- */
 
 
 @end
