@@ -7,14 +7,18 @@
 //
 
 #import "GitHubViewController.h"
-#import "CellTableViewCell.h"
-#import "iTunesRequest.h"
-#import "Album.h"
-#import "DetailViewController.h"
+#import "UsersTableViewCell.h"
+#import "GitHubRequest.h"
+#import "User.h"
+
 
 @interface GitHubViewController () <UISearchControllerDelegate , UISearchBarDelegate , UITableViewDelegate, UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, copy) NSArray *users;
 @property (nonatomic) NSString *searchLetter;
+
+- (IBAction)reloadButtonAction:(UIBarButtonItem *)sender;
 
 @end
 
@@ -54,49 +58,48 @@
 
 - (void)refresh {
     
-//    if (!self.searchLetter) {
-//        self.searchLetter = @"";
-//    }
-//
-//    [iTunesRequest downloadDataFromSearchTerms:self.searchLetter withCompetionBlock:^(BOOL success, NSArray *albums) {
-//
-//        if (success) {
-//            self.albums = albums;
-//            [self loadForAlbums];
-//
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [self.tableView reloadData];
-//            });
-//        } else {
-//                //NSLog(@"Error refresh:  %@", NSStringFromSelector(_cmd));
-//                // alert
-//            [[[UIAlertView alloc] initWithTitle:@"Error"
-//                                        message:@"Error bla bla bla..."
-//                                       delegate:nil
-//                              cancelButtonTitle:@"Close"
-//                              otherButtonTitles:nil, nil] show];
-//
-//        }
-//    }];
+    if (!self.searchLetter) {
+        self.searchLetter = @"";
+    }
+
+    [GitHubRequest downloadDataFromSearchTerms:self.searchLetter withCompetionBlock:^(BOOL success, NSArray *users) {
+
+        if (success) {
+            self.users = users;
+            [self loadForAlbums];
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+        } else {
+                //NSLog(@"Error refresh:  %@", NSStringFromSelector(_cmd));
+                // alert
+            [[[UIAlertView alloc] initWithTitle:@"Error"
+                                        message:@"Error bla bla bla..."
+                                       delegate:nil
+                              cancelButtonTitle:@"Close"
+                              otherButtonTitles:nil, nil] show];
+        }
+    }];
 }
 
 - (void)loadForAlbums {
     
-//    for (int i = 0; i < self.albums.count; i++) {
-//
-//        Album *album = self.albums[i];
-//        NSLog(@"%@", album.trackName);
-//
-//        [album getImageWithCompletionBlock:^{
-//
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                NSIndexPath *ip = [NSIndexPath indexPathForItem:i inSection:0];
-//                CellTableViewCell *cell = (CellTableViewCell *)[self.tableView cellForRowAtIndexPath:ip];
-//                cell.imageView.alpha = 1;
-//                [self.tableView reloadData];
-//            });
-//        }];
-//    }
+    for (int i = 0; i < self.users.count; i++) {
+
+        User *user = self.users[i];
+        NSLog(@"%@", user.login);
+
+        [user getImageWithCompletionBlock:^{
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSIndexPath *ip = [NSIndexPath indexPathForItem:i inSection:0];
+                UsersTableViewCell *cell = (UsersTableViewCell *)[self.tableView cellForRowAtIndexPath:ip];
+                cell.imageView.alpha = 1;
+                [self.tableView reloadData];
+            });
+        }];
+    }
 }
 
 - (IBAction)reloadButtonAction:(UIBarButtonItem *)sender {
@@ -106,23 +109,22 @@
 
 #pragma mark - UITableViewData
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
-    //return [self.albums count];
+    return [self.users count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellID = @"Cell";
-    CellTableViewCell *cell = (CellTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    UsersTableViewCell *cell = (UsersTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     
     if (cell == nil) {
-        cell = [[CellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell = [[UsersTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
     
-//    Album *album = [self.albums objectAtIndex:indexPath.row];
-//    cell.albumNameLabel.text = album.albumName;
-//    cell.artistLabel.text = album.artistName;
-//    cell.trackName.text = album.trackName;
-//    cell.albumImageView.image = album.image;
+    User *user = [self.users objectAtIndex:indexPath.row];
+    cell.login.text = user.login;
+    cell.loginId.text = [NSString stringWithFormat:@"Login ID: %@", user.idNumber];
+    cell.loginScore.text = [NSString stringWithFormat:@"Login ID: %@", user.score];
+    cell.avatarImageView.image = user.imageAvatar;
     
     return cell;
 }
@@ -141,7 +143,7 @@
         NSLog(@"%@", searchBar.text);
         self.searchLetter = searchBar.text;
         [self.tableView endEditing:YES];
-//        [self refresh];
+        [self refresh];
     }
 }
 

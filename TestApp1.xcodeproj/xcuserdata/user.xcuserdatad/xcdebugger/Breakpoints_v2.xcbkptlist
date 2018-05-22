@@ -2,4 +2,85 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApp1/GitHubSearch/GitHubViewController.m"
+            timestampString = "548691129.984028"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestApp1/GitHubSearch/GitHubViewController.m"
+            timestampString = "548691129.984501"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-refresh"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__31-[GitHubViewController refresh]_block_invoke"
+                  moduleName = "TestApp1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Library/Mobile%20Documents/com~apple~CloudDocs/Revel%20training%20plan/Sourse%20codes/TestApp1/TestApp1/GitHubSearch/GitHubViewController.m"
+                  timestampString = "548691130.036296"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "129">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__31-[GitHubViewController refresh]_block_invoke_2"
+                  moduleName = "TestApp1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Library/Mobile%20Documents/com~apple~CloudDocs/Revel%20training%20plan/Sourse%20codes/TestApp1/TestApp1/GitHubSearch/GitHubViewController.m"
+                  timestampString = "548691130.047915"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_"
+                  moduleName = "TestApp1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Library/Mobile%20Documents/com~apple~CloudDocs/Revel%20training%20plan/Sourse%20codes/TestApp1/TestApp1/GitHubSearch/GitHubViewController.m"
+                  timestampString = "548691130.053129"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

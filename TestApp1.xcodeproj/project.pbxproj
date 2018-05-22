@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE0842AF20B2B7B4009ED951 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842AE20B2B7B4009ED951 /* AppDelegate.m */; };
 		CE0842B220B2B7B4009ED951 /* iTunesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842B120B2B7B4009ED951 /* iTunesViewController.m */; };
-		CE0842B520B2B7B5009ED951 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842B420B2B7B5009ED951 /* SecondViewController.m */; };
+		CE0842B520B2B7B5009ED951 /* GitHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842B420B2B7B5009ED951 /* GitHubViewController.m */; };
 		CE0842B820B2B7B5009ED951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0842B620B2B7B5009ED951 /* Main.storyboard */; };
 		CE0842BA20B2B7B5009ED951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0842B920B2B7B5009ED951 /* Assets.xcassets */; };
 		CE0842BD20B2B7B5009ED951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0842BB20B2B7B5009ED951 /* LaunchScreen.storyboard */; };
@@ -19,6 +19,10 @@
 		CE0842E720B30F0F009ED951 /* iTunesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842E620B30F0F009ED951 /* iTunesRequest.m */; };
 		CE0842EA20B319EB009ED951 /* iTunesJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842E920B319EB009ED951 /* iTunesJSONParser.m */; };
 		CE0842ED20B31B1B009ED951 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842EC20B31B1B009ED951 /* Album.m */; };
+		CE0842F820B44992009ED951 /* GitHubRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842F720B44992009ED951 /* GitHubRequest.m */; };
+		CE0842FB20B44D48009ED951 /* GitHubJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842FA20B44D48009ED951 /* GitHubJSONParser.m */; };
+		CE0842FE20B45026009ED951 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842FD20B45026009ED951 /* User.m */; };
+		CE08430120B45773009ED951 /* UsersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE08430020B45773009ED951 /* UsersTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +31,8 @@
 		CE0842AE20B2B7B4009ED951 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CE0842B020B2B7B4009ED951 /* iTunesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunesViewController.h; sourceTree = "<group>"; };
 		CE0842B120B2B7B4009ED951 /* iTunesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesViewController.m; sourceTree = "<group>"; };
-		CE0842B320B2B7B5009ED951 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		CE0842B420B2B7B5009ED951 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		CE0842B320B2B7B5009ED951 /* GitHubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitHubViewController.h; sourceTree = "<group>"; };
+		CE0842B420B2B7B5009ED951 /* GitHubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitHubViewController.m; sourceTree = "<group>"; };
 		CE0842B720B2B7B5009ED951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE0842B920B2B7B5009ED951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0842BC20B2B7B5009ED951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +48,14 @@
 		CE0842E920B319EB009ED951 /* iTunesJSONParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesJSONParser.m; sourceTree = "<group>"; };
 		CE0842EB20B31B1B009ED951 /* Album.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		CE0842EC20B31B1B009ED951 /* Album.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		CE0842F620B44992009ED951 /* GitHubRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitHubRequest.h; sourceTree = "<group>"; };
+		CE0842F720B44992009ED951 /* GitHubRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitHubRequest.m; sourceTree = "<group>"; };
+		CE0842F920B44D48009ED951 /* GitHubJSONParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitHubJSONParser.h; sourceTree = "<group>"; };
+		CE0842FA20B44D48009ED951 /* GitHubJSONParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitHubJSONParser.m; sourceTree = "<group>"; };
+		CE0842FC20B45026009ED951 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		CE0842FD20B45026009ED951 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		CE0842FF20B45773009ED951 /* UsersTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UsersTableViewCell.h; sourceTree = "<group>"; };
+		CE08430020B45773009ED951 /* UsersTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +88,12 @@
 		CE0842AC20B2B7B4009ED951 /* TestApp1 */ = {
 			isa = PBXGroup;
 			children = (
-				CE0842E420B30ED9009ED951 /* request */,
+				CE0842F520B44960009ED951 /* GitHubRequest */,
+				CE0842E420B30ED9009ED951 /* iTunesRequest */,
 				CE0842AD20B2B7B4009ED951 /* AppDelegate.h */,
 				CE0842AE20B2B7B4009ED951 /* AppDelegate.m */,
-				CE0842B020B2B7B4009ED951 /* iTunesViewController.h */,
-				CE0842B120B2B7B4009ED951 /* iTunesViewController.m */,
-				CE0842B320B2B7B5009ED951 /* SecondViewController.h */,
-				CE0842B420B2B7B5009ED951 /* SecondViewController.m */,
+				CE0842F320B43566009ED951 /* iTunesSearch */,
+				CE0842F420B43A16009ED951 /* GitHubSearch */,
 				CE0842B620B2B7B5009ED951 /* Main.storyboard */,
 				CE0842B920B2B7B5009ED951 /* Assets.xcassets */,
 				CE0842BB20B2B7B5009ED951 /* LaunchScreen.storyboard */,
@@ -92,11 +103,13 @@
 				CE0842DF20B2D879009ED951 /* DetailViewController.m */,
 				CE0842E120B2DA83009ED951 /* CellTableViewCell.h */,
 				CE0842E220B2DA83009ED951 /* CellTableViewCell.m */,
+				CE0842FF20B45773009ED951 /* UsersTableViewCell.h */,
+				CE08430020B45773009ED951 /* UsersTableViewCell.m */,
 			);
 			path = TestApp1;
 			sourceTree = "<group>";
 		};
-		CE0842E420B30ED9009ED951 /* request */ = {
+		CE0842E420B30ED9009ED951 /* iTunesRequest */ = {
 			isa = PBXGroup;
 			children = (
 				CE0842E520B30F0F009ED951 /* iTunesRequest.h */,
@@ -106,7 +119,38 @@
 				CE0842EB20B31B1B009ED951 /* Album.h */,
 				CE0842EC20B31B1B009ED951 /* Album.m */,
 			);
-			path = request;
+			path = iTunesRequest;
+			sourceTree = "<group>";
+		};
+		CE0842F320B43566009ED951 /* iTunesSearch */ = {
+			isa = PBXGroup;
+			children = (
+				CE0842B020B2B7B4009ED951 /* iTunesViewController.h */,
+				CE0842B120B2B7B4009ED951 /* iTunesViewController.m */,
+			);
+			path = iTunesSearch;
+			sourceTree = "<group>";
+		};
+		CE0842F420B43A16009ED951 /* GitHubSearch */ = {
+			isa = PBXGroup;
+			children = (
+				CE0842B320B2B7B5009ED951 /* GitHubViewController.h */,
+				CE0842B420B2B7B5009ED951 /* GitHubViewController.m */,
+			);
+			path = GitHubSearch;
+			sourceTree = "<group>";
+		};
+		CE0842F520B44960009ED951 /* GitHubRequest */ = {
+			isa = PBXGroup;
+			children = (
+				CE0842F620B44992009ED951 /* GitHubRequest.h */,
+				CE0842F720B44992009ED951 /* GitHubRequest.m */,
+				CE0842F920B44D48009ED951 /* GitHubJSONParser.h */,
+				CE0842FA20B44D48009ED951 /* GitHubJSONParser.m */,
+				CE0842FC20B45026009ED951 /* User.h */,
+				CE0842FD20B45026009ED951 /* User.m */,
+			);
+			path = GitHubRequest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,12 +223,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0842F820B44992009ED951 /* GitHubRequest.m in Sources */,
+				CE0842FB20B44D48009ED951 /* GitHubJSONParser.m in Sources */,
 				CE0842E720B30F0F009ED951 /* iTunesRequest.m in Sources */,
 				CE0842E020B2D879009ED951 /* DetailViewController.m in Sources */,
-				CE0842B520B2B7B5009ED951 /* SecondViewController.m in Sources */,
+				CE0842B520B2B7B5009ED951 /* GitHubViewController.m in Sources */,
 				CE0842AF20B2B7B4009ED951 /* AppDelegate.m in Sources */,
+				CE08430120B45773009ED951 /* UsersTableViewCell.m in Sources */,
 				CE0842EA20B319EB009ED951 /* iTunesJSONParser.m in Sources */,
 				CE0842C020B2B7B5009ED951 /* main.m in Sources */,
+				CE0842FE20B45026009ED951 /* User.m in Sources */,
 				CE0842ED20B31B1B009ED951 /* Album.m in Sources */,
 				CE0842B220B2B7B4009ED951 /* iTunesViewController.m in Sources */,
 				CE0842E320B2DA83009ED951 /* CellTableViewCell.m in Sources */,
