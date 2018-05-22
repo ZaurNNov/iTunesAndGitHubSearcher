@@ -66,7 +66,7 @@
                                     <outlet property="albumNameLabel" destination="tVN-gb-NLp" id="Q2a-lj-4eq"/>
                                     <outlet property="artistLabel" destination="2BI-vA-6rb" id="7cL-51-nhP"/>
                                     <outlet property="trackName" destination="WJm-9W-A85" id="WaC-Re-L7L"/>
-                                    <segue destination="ATT-36-gwr" kind="show" identifier="iTunesDetail" trigger="accessoryAction" id="TzV-GJ-QfW"/>
+                                    <segue destination="qdD-md-dpG" kind="show" identifier="iTunesDetail" id="zgG-ZC-PX7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -80,21 +80,77 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="searchBar" destination="Bc3-rm-yL0" id="45A-TG-zyD"/>
-                        <outlet property="searchDisplayController" destination="nsR-Lg-mDg" id="x3p-8k-NHF"/>
+                        <outlet property="view" destination="puY-Qe-uiD" id="F3C-tI-AC2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hNp-7J-Nyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="nsR-Lg-mDg">
-                    <connections>
-                        <outlet property="delegate" destination="vbX-W0-xFb" id="hHx-YS-45Y"/>
-                        <outlet property="searchBar" destination="Bc3-rm-yL0" id="aYE-iz-5yJ"/>
-                        <outlet property="searchContentsController" destination="vbX-W0-xFb" id="WyQ-qa-mx9"/>
-                        <outlet property="searchResultsDataSource" destination="vbX-W0-xFb" id="r99-Q2-Gmd"/>
-                        <outlet property="searchResultsDelegate" destination="vbX-W0-xFb" id="WvW-Vl-SUK"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="926" y="-1052"/>
+            <point key="canvasLocation" x="1251" y="-1046"/>
+        </scene>
+        <!--GitHub-->
+        <scene sceneID="Mdk-hD-c2K">
+            <objects>
+                <tableViewController id="gKZ-1Q-F2i" customClass="GitHubViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AGr-uY-UJS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search in GitHub" id="xos-oq-f11" userLabel="Search">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="gKZ-1Q-F2i" id="lVo-g7-CAx"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="scB-5I-OzT" customClass="CellTableViewCell">
+                                <rect key="frame" x="0.0" y="72" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="scB-5I-OzT" id="bYc-S9-v8Z">
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7f-VQ-bNG">
+                                            <rect key="frame" x="8" y="18" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLY-p5-AdI">
+                                            <rect key="frame" x="76" y="19" width="209" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgU-oQ-N2B">
+                                            <rect key="frame" x="76" y="39" width="209" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fo7-Lg-A6w">
+                                            <rect key="frame" x="76" y="58" width="209" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gKZ-1Q-F2i" id="liJ-lS-vZV"/>
+                            <outlet property="delegate" destination="gKZ-1Q-F2i" id="P82-3O-uo2"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="eb5-vL-kdD"/>
+                    <navigationItem key="navigationItem" title="GitHub" id="RL3-Jh-iEL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sxv-he-0DX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="-373"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -108,79 +164,79 @@
                     </tabBar>
                     <connections>
                         <segue destination="vbX-W0-xFb" kind="relationship" relationship="viewControllers" id="eL4-kq-jH6"/>
+                        <segue destination="gKZ-1Q-F2i" kind="relationship" relationship="viewControllers" id="rsY-qc-rJX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="-769"/>
+            <point key="canvasLocation" x="373" y="-769"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="thW-s6-2vk">
+        <!--Detail-->
+        <scene sceneID="C5g-2w-LsW">
             <objects>
-                <viewController id="ATT-36-gwr" customClass="DetailViewController" sceneMemberID="viewController">
-                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="gb4-Rh-SDb">
+                <viewController id="qdD-md-dpG" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="BWk-Gb-avt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YlA-LZ-q6p" customClass="SWCircularImageView">
-                                <rect key="frame" x="107" y="8" width="106" height="106"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="odw-qr-39a">
+                                <rect key="frame" x="16" y="64" width="288" height="150"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggo-Yi-mMk">
-                                <rect key="frame" x="20" y="127" width="280" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXi-oH-mSI">
+                                <rect key="frame" x="16" y="222" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFf-jc-JhH">
-                                <rect key="frame" x="20" y="157" width="280" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Album" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6qe-zf-ugY">
+                                <rect key="frame" x="16" y="260" width="288" height="29"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2r-KC-Skx">
-                                <rect key="frame" x="20" y="185" width="280" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVe-ux-WdW">
+                                <rect key="frame" x="16" y="376" width="288" height="29"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.75473565919999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0F-Vb-3dx">
-                                <rect key="frame" x="20" y="213" width="280" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJr-Lf-nZA">
+                                <rect key="frame" x="16" y="340" width="288" height="28"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.75473565924657537" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ka-RO-vBT">
-                                <rect key="frame" x="20" y="241" width="280" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omp-bd-kc6">
+                                <rect key="frame" x="16" y="297" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="YlA-LZ-q6p" secondAttribute="centerX" id="lXu-c2-ayJ"/>
-                            <constraint firstItem="YlA-LZ-q6p" firstAttribute="top" secondItem="q6x-RU-pdP" secondAttribute="top" constant="8" id="npO-Tf-ZwA"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="q6x-RU-pdP"/>
-                    </scrollView>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dEc-pE-KUM"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="Zlp-Dc-tjV">
+                        <barButtonItem key="backBarButtonItem" title="Search" id="bXp-VM-hgk"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="albumNameLabel" destination="LFf-jc-JhH" id="E9Z-5v-QWY"/>
-                        <outlet property="artistNameLabel" destination="i2r-KC-Skx" id="oFZ-4g-qfQ"/>
-                        <outlet property="headShotImageView" destination="YlA-LZ-q6p" id="1tL-tk-bWM"/>
-                        <outlet property="priceNameLabel" destination="u0F-Vb-3dx" id="76G-rR-mIp"/>
-                        <outlet property="releaseDateLabel" destination="8ka-RO-vBT" id="7PN-dE-J7k"/>
-                        <outlet property="trackNameLabel" destination="ggo-Yi-mMk" id="D7J-Jg-KYo"/>
+                        <outlet property="albumNameLabel" destination="6qe-zf-ugY" id="8C3-Dp-efK"/>
+                        <outlet property="artistNameLabel" destination="Omp-bd-kc6" id="82X-QL-Cc3"/>
+                        <outlet property="headShotImageView" destination="odw-qr-39a" id="TPj-p0-3Og"/>
+                        <outlet property="priceNameLabel" destination="sVe-ux-WdW" id="Lmm-34-JMc"/>
+                        <outlet property="releaseDateLabel" destination="BJr-Lf-nZA" id="GF8-BA-Ph6"/>
+                        <outlet property="trackNameLabel" destination="AXi-oH-mSI" id="H53-KT-sJ0"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oVY-gH-Xo1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Grx-SB-qoP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="-1052"/>
+            <point key="canvasLocation" x="2053" y="-1047"/>
         </scene>
         <!--NC-->
         <scene sceneID="HDt-6m-cG1">
@@ -199,7 +255,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGm-3W-Ohi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-776" y="-769"/>
+            <point key="canvasLocation" x="-390" y="-769"/>
         </scene>
     </scenes>
 </document>
