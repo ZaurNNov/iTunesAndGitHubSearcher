@@ -10,6 +10,7 @@
 #import "UsersTableViewCell.h"
 #import "GitHubRequest.h"
 #import "User.h"
+#import "UserDetailsViewController.h"
 
 
 @interface GitHubViewController () <UISearchControllerDelegate , UISearchBarDelegate , UITableViewDelegate, UITableViewDataSource>
@@ -123,7 +124,7 @@
     User *user = [self.users objectAtIndex:indexPath.row];
     cell.login.text = user.login;
     cell.loginId.text = [NSString stringWithFormat:@"Login ID: %@", user.idNumber];
-    cell.loginScore.text = [NSString stringWithFormat:@"Login ID: %@", user.score];
+    cell.loginScore.text = [NSString stringWithFormat:@"User score: %@", user.score];
     cell.avatarImageView.image = user.imageAvatar;
     
     return cell;
@@ -152,17 +153,17 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-//    if ([segue.identifier  isEqual: @"iTunesDetail"]) {
-//        NSLog(@"%@", NSStringFromSelector(_cmd));
-//
-//            //UINavigationController *nc = [segue destinationViewController];
-//            //DetailViewController *dvc = nc.viewControllers[0];
-//
-//        DetailViewController *dvc = [segue destinationViewController];
-//        NSIndexPath *ip = [self.tableView indexPathForCell:sender];
-//        Album *albumShare = self.albums[ip.item];
-//        dvc.albumShared = albumShare;
-//    }
+    if ([segue.identifier  isEqual: @"GitHubDetail"]) {
+        NSLog(@"%@", NSStringFromSelector(_cmd));
+        
+            //UINavigationController *nc = [segue destinationViewController];
+            //DetailViewController *dvc = nc.viewControllers[0];
+        
+        UserDetailsViewController *udvc = [segue destinationViewController];
+        NSIndexPath *ip = [self.tableView indexPathForCell:sender];
+        User *userShared = self.users[ip.item];
+        udvc.userShared = userShared;
+    }
 }
 
 

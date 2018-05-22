@@ -143,6 +143,7 @@
                                     <outlet property="login" destination="WLY-p5-AdI" id="3OB-Or-SKi"/>
                                     <outlet property="loginId" destination="ZgU-oQ-N2B" id="vBY-Bq-p4h"/>
                                     <outlet property="loginScore" destination="fo7-Lg-A6w" id="7GT-e3-DcQ"/>
+                                    <segue destination="DlV-E0-YAR" kind="show" identifier="GitHubDetail" id="IEL-SH-XCq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -245,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Grx-SB-qoP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2053" y="-1047"/>
+            <point key="canvasLocation" x="2123" y="-1047"/>
         </scene>
         <!--NC-->
         <scene sceneID="HDt-6m-cG1">
@@ -265,6 +266,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGm-3W-Ohi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-390" y="-769"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="xFH-de-Che">
+            <objects>
+                <viewController id="DlV-E0-YAR" customClass="UserDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="jOR-K0-fQe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ee-GY-IKe">
+                                <rect key="frame" x="16" y="64" width="288" height="150"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lNG-aB-Mww">
+                                <rect key="frame" x="16" y="222" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="URL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7jr-S4-6JJ">
+                                <rect key="frame" x="16" y="260" width="288" height="29"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ik-s7-uSX">
+                                <rect key="frame" x="16" y="376" width="288" height="29"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.75473565919999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ID number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1l-Jl-Iwg">
+                                <rect key="frame" x="16" y="340" width="288" height="28"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.75473565919999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repos URL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzr-av-iSr">
+                                <rect key="frame" x="16" y="297" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="B34-v5-Pnw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="ifP-Pn-4bl">
+                        <barButtonItem key="backBarButtonItem" title="Search" id="oMU-54-4mJ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="loginAvatarImage" destination="3ee-GY-IKe" id="PDi-Q0-RdH"/>
+                        <outlet property="loginNameLabel" destination="lNG-aB-Mww" id="wcH-sI-2s8"/>
+                        <outlet property="reposUrlLabel" destination="xzr-av-iSr" id="fgq-U9-x6p"/>
+                        <outlet property="userIDLabel" destination="B1l-Jl-Iwg" id="EmE-7B-3Qd"/>
+                        <outlet property="userScoreLabel" destination="1ik-s7-uSX" id="GUY-bX-eNA"/>
+                        <outlet property="userUrlLabel" destination="7jr-S4-6JJ" id="x2p-vL-W8O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aoA-VI-I9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2123" y="-374"/>
         </scene>
     </scenes>
 </document>

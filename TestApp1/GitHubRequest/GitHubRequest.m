@@ -7,6 +7,7 @@
 //
 
 #import "GitHubRequest.h"
+#import "GitHubJSONParser.h"
 
 @implementation GitHubRequest
 
@@ -27,7 +28,7 @@ static NSString *gitLink = @"https://api.github.com/search/users?q=%@";
                                     NSURLResponse *response,
                                     NSError *error) {
                         // nslog data
-                    //complete((error == nil), [iTunesJSONParser parseAlbumsFromData:data]);
+                    complete((error == nil), [GitHubJSONParser parseUserFromData:data]);
                     
                 }] resume];
 }

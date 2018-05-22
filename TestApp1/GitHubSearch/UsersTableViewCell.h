@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UsersTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *login;
 @property (weak, nonatomic) IBOutlet UILabel *loginId;

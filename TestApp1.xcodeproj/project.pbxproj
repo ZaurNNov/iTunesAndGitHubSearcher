@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63A8A4BF20B48AB8001933D2 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A8A4BE20B48AB8001933D2 /* UserDetailsViewController.m */; };
 		CE0842AF20B2B7B4009ED951 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842AE20B2B7B4009ED951 /* AppDelegate.m */; };
 		CE0842B220B2B7B4009ED951 /* iTunesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842B120B2B7B4009ED951 /* iTunesViewController.m */; };
 		CE0842B520B2B7B5009ED951 /* GitHubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842B420B2B7B5009ED951 /* GitHubViewController.m */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63A8A4BD20B48AB8001933D2 /* UserDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
+		63A8A4BE20B48AB8001933D2 /* UserDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
 		CE0842AA20B2B7B4009ED951 /* TestApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0842AD20B2B7B4009ED951 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE0842AE20B2B7B4009ED951 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -99,12 +102,6 @@
 				CE0842BB20B2B7B5009ED951 /* LaunchScreen.storyboard */,
 				CE0842BE20B2B7B5009ED951 /* Info.plist */,
 				CE0842BF20B2B7B5009ED951 /* main.m */,
-				CE0842DE20B2D879009ED951 /* DetailViewController.h */,
-				CE0842DF20B2D879009ED951 /* DetailViewController.m */,
-				CE0842E120B2DA83009ED951 /* CellTableViewCell.h */,
-				CE0842E220B2DA83009ED951 /* CellTableViewCell.m */,
-				CE0842FF20B45773009ED951 /* UsersTableViewCell.h */,
-				CE08430020B45773009ED951 /* UsersTableViewCell.m */,
 			);
 			path = TestApp1;
 			sourceTree = "<group>";
@@ -125,8 +122,12 @@
 		CE0842F320B43566009ED951 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				CE0842E120B2DA83009ED951 /* CellTableViewCell.h */,
+				CE0842E220B2DA83009ED951 /* CellTableViewCell.m */,
 				CE0842B020B2B7B4009ED951 /* iTunesViewController.h */,
 				CE0842B120B2B7B4009ED951 /* iTunesViewController.m */,
+				CE0842DE20B2D879009ED951 /* DetailViewController.h */,
+				CE0842DF20B2D879009ED951 /* DetailViewController.m */,
 			);
 			path = iTunesSearch;
 			sourceTree = "<group>";
@@ -136,6 +137,10 @@
 			children = (
 				CE0842B320B2B7B5009ED951 /* GitHubViewController.h */,
 				CE0842B420B2B7B5009ED951 /* GitHubViewController.m */,
+				CE0842FF20B45773009ED951 /* UsersTableViewCell.h */,
+				CE08430020B45773009ED951 /* UsersTableViewCell.m */,
+				63A8A4BD20B48AB8001933D2 /* UserDetailsViewController.h */,
+				63A8A4BE20B48AB8001933D2 /* UserDetailsViewController.m */,
 			);
 			path = GitHubSearch;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63A8A4BF20B48AB8001933D2 /* UserDetailsViewController.m in Sources */,
 				CE0842F820B44992009ED951 /* GitHubRequest.m in Sources */,
 				CE0842FB20B44D48009ED951 /* GitHubJSONParser.m in Sources */,
 				CE0842E720B30F0F009ED951 /* iTunesRequest.m in Sources */,

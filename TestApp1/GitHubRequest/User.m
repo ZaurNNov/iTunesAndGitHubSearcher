@@ -32,7 +32,7 @@
     return self;
 }
 
-+ (UIImage *)imageFromImage: (UIImage *)image scaled:(CGSize)size {
++ (UIImage *)imageFromImage:(UIImage *)image scaled:(CGSize)size {
     UIGraphicsBeginImageContext(size);
     [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
