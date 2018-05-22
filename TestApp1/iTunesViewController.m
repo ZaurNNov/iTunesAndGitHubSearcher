@@ -52,7 +52,7 @@
 
 - (void)refresh {
     
-    self.searchLetter = @"keynote";
+    self.searchLetter = @"song";
     
     [iTunesRequest downloadDataFromSearchTerms:self.searchLetter withCompetionBlock:^(BOOL success, NSArray *albums) {
         
