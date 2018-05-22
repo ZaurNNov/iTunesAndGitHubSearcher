@@ -10,19 +10,16 @@
 #import "CellTableViewCell.h"
 #import "iTunesRequest.h"
 #import "Album.h"
+#import "DetailViewController.h"
 
 
-@interface iTunesViewController () <UISearchDisplayDelegate, UISearchBarDelegate , UITableViewDelegate, UITableViewDataSource>
+@interface iTunesViewController () <UISearchControllerDelegate , UISearchBarDelegate , UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-//@property (weak, nonatomic) IBOutlet CellTableViewCell *resultCell;
-
 @property (nonatomic, copy) NSArray *albums;
-@property (nonatomic) UILabel *error;
-@property (nonatomic) NSArray *searchResults;
-@property (nonatomic) NSTimer *timer;
-
 @property (nonatomic) NSString *searchLetter;
+
+- (IBAction)reloadButtonAction:(UIBarButtonItem *)sender;
 
 @end
 
@@ -48,11 +45,23 @@
     return self;
 }
 
+#pragma mark - Life Cycle
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    self.title = @"iTunes Search";
+    self.tableView.backgroundColor = [UIColor whiteColor];
+}
+
 #pragma mark - Refresh
 
 - (void)refresh {
     
-    self.searchLetter = @"song";
+    if (!self.searchLetter) {
+        self.searchLetter = @"";
+    }
     
     [iTunesRequest downloadDataFromSearchTerms:self.searchLetter withCompetionBlock:^(BOOL success, NSArray *albums) {
         
@@ -64,7 +73,14 @@
                 [self.tableView reloadData];
             });
         } else {
-            NSLog(@"Error refresh:  %@", NSStringFromSelector(_cmd));
+            //NSLog(@"Error refresh:  %@", NSStringFromSelector(_cmd));
+            // alert
+            [[[UIAlertView alloc] initWithTitle:@"Error"
+                                        message:@"Error bla bla bla..."
+                                       delegate:nil
+                              cancelButtonTitle:@"Close"
+                              otherButtonTitles:nil, nil] show];
+
         }
     }];
 }
@@ -88,6 +104,11 @@
     }
 }
 
+- (IBAction)reloadButtonAction:(UIBarButtonItem *)sender {
+    [self refresh];
+}
+
+
 #pragma mark - UITableViewData
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.albums count];
@@ -100,23 +121,12 @@
     if (cell == nil) {
         cell = [[CellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     }
-    
-//    if () {
-        // Hack prepare for search
-        
-//        Album *album = [self.searchResults objectAtIndex:indexPath.row];
-//        cell.albumNameLabel.text = album.albumName;
-//        cell.artistLabel.text = album.artistName;
-//        cell.trackName.text = album.trackName;
-//        cell.albumImageView.image = album.image;
-        
-//    } else {
+
         Album *album = [self.albums objectAtIndex:indexPath.row];
         cell.albumNameLabel.text = album.albumName;
         cell.artistLabel.text = album.artistName;
         cell.trackName.text = album.trackName;
         cell.albumImageView.image = album.image;
-//    }
     
     return cell;
 }
@@ -127,17 +137,36 @@
 }
 
 #pragma mark - Search
-// not ready
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    if (!searchBar.text) {
+        return;
+    } else {
+        NSLog(@"%@", searchBar.text);
+        self.searchLetter = searchBar.text;
+        [self.tableView endEditing:YES];
+        [self refresh];
+    }
+}
 
 
-//#pragma mark - Seque
-////iTunesDetail
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    static sequeID
-//    if (segue.identifier isEqualToString:@"iTunesDetail") {
-//        <#statements#>
-//    }
-//}
+#pragma mark - Seque
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier  isEqual: @"iTunesDetail"]) {
+        NSLog(@"%@", NSStringFromSelector(_cmd));
+        
+        //UINavigationController *nc = [segue destinationViewController];
+        //DetailViewController *dvc = nc.viewControllers[0];
+        
+        DetailViewController *dvc = [segue destinationViewController];
+        NSIndexPath *ip = [self.tableView indexPathForCell:sender];
+        Album *albumShare = self.albums[ip.item];
+        dvc.albumShared = albumShare;
+    }
+}
+
 
 
 @end
