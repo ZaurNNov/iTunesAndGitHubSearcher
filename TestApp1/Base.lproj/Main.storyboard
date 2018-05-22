@@ -75,7 +75,7 @@
                             <outlet property="delegate" destination="vbX-W0-xFb" id="fHU-2k-S7P"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="iTunes" id="7wN-YF-8Jb"/>
+                    <tabBarItem key="tabBarItem" title="iTunes" image="Tun2" selectedImage="iTun" id="7wN-YF-8Jb"/>
                     <navigationItem key="navigationItem" title="iTunes Library" id="7hE-8c-XEM"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -152,7 +152,7 @@
                             <outlet property="delegate" destination="gKZ-1Q-F2i" id="P82-3O-uo2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="eb5-vL-kdD"/>
+                    <tabBarItem key="tabBarItem" title="Git" image="git2" selectedImage="git" id="eb5-vL-kdD"/>
                     <navigationItem key="navigationItem" title="GitHub" id="RL3-Jh-iEL"/>
                     <connections>
                         <outlet property="searchBar" destination="xos-oq-f11" id="SPw-8h-7QC"/>
@@ -170,7 +170,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.81620826570000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="vbX-W0-xFb" kind="relationship" relationship="viewControllers" id="eL4-kq-jH6"/>
@@ -335,4 +336,10 @@
             <point key="canvasLocation" x="2123" y="-374"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Tun2" width="30" height="30"/>
+        <image name="git" width="30" height="30"/>
+        <image name="git2" width="30" height="30"/>
+        <image name="iTun" width="30" height="30"/>
+    </resources>
 </document>

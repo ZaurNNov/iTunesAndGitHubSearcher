@@ -93,15 +93,15 @@
 			children = (
 				CE0842F520B44960009ED951 /* GitHubRequest */,
 				CE0842E420B30ED9009ED951 /* iTunesRequest */,
-				CE0842AD20B2B7B4009ED951 /* AppDelegate.h */,
-				CE0842AE20B2B7B4009ED951 /* AppDelegate.m */,
 				CE0842F320B43566009ED951 /* iTunesSearch */,
 				CE0842F420B43A16009ED951 /* GitHubSearch */,
-				CE0842B620B2B7B5009ED951 /* Main.storyboard */,
-				CE0842B920B2B7B5009ED951 /* Assets.xcassets */,
-				CE0842BB20B2B7B5009ED951 /* LaunchScreen.storyboard */,
-				CE0842BE20B2B7B5009ED951 /* Info.plist */,
+				CE0842AD20B2B7B4009ED951 /* AppDelegate.h */,
+				CE0842AE20B2B7B4009ED951 /* AppDelegate.m */,
 				CE0842BF20B2B7B5009ED951 /* main.m */,
+				CE0842BE20B2B7B5009ED951 /* Info.plist */,
+				CE0842B920B2B7B5009ED951 /* Assets.xcassets */,
+				CE0842B620B2B7B5009ED951 /* Main.storyboard */,
+				CE0842BB20B2B7B5009ED951 /* LaunchScreen.storyboard */,
 			);
 			path = TestApp1;
 			sourceTree = "<group>";
