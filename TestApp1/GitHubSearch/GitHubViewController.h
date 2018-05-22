@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  GitHubViewController.h
 //  TestApp1
 //
 //  Created by Zaur Giyasov on 21/05/2018.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface GitHubViewController : UITableViewController
 
 
 @end
