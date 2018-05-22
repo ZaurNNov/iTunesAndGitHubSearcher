@@ -20,7 +20,6 @@
     self = [super init];
     
     if (self) {
-        
         _albumName = [albumName copy];
         _artistName = [artistName copy];
         _trackName = [trackName copy];
@@ -55,7 +54,7 @@
                 
                 UIImage *image = [UIImage imageWithData:data];
                 
-                [Album imageFromImage:image scaled:CGSizeMake(100, 100)];
+                [Album imageFromImage:image scaled:CGSizeMake(200, 200)];
                 
                 strongSelf.image = image;
                 
