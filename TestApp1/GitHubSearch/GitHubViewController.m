@@ -73,13 +73,15 @@
                 [self.tableView reloadData];
             });
         } else {
-                //NSLog(@"Error refresh:  %@", NSStringFromSelector(_cmd));
-                // alert
+            NSLog(@"Error refresh:  %@", NSStringFromSelector(_cmd));
+            // alert
+            /*
             [[[UIAlertView alloc] initWithTitle:@"Error"
                                         message:@"Error bla bla bla..."
                                        delegate:nil
                               cancelButtonTitle:@"Close"
                               otherButtonTitles:nil, nil] show];
+             */
         }
     }];
 }
