@@ -122,10 +122,10 @@
 		CE0842F320B43566009ED951 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
-				CE0842E120B2DA83009ED951 /* CellTableViewCell.h */,
-				CE0842E220B2DA83009ED951 /* CellTableViewCell.m */,
 				CE0842B020B2B7B4009ED951 /* iTunesViewController.h */,
 				CE0842B120B2B7B4009ED951 /* iTunesViewController.m */,
+				CE0842E120B2DA83009ED951 /* CellTableViewCell.h */,
+				CE0842E220B2DA83009ED951 /* CellTableViewCell.m */,
 				CE0842DE20B2D879009ED951 /* DetailViewController.h */,
 				CE0842DF20B2D879009ED951 /* DetailViewController.m */,
 			);
@@ -389,7 +389,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = StudyTest.TestApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -405,7 +405,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = StudyTest.TestApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

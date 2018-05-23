@@ -135,6 +135,12 @@
     return 100.f;
 }
 
+    // Hide keyboard
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.searchBar resignFirstResponder];
+    [self.tableView endEditing:YES];
+}
+
 #pragma mark - Search
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
