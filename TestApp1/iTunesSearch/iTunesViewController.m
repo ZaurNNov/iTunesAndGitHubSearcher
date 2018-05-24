@@ -16,8 +16,11 @@
 @interface iTunesViewController () <UISearchControllerDelegate , UISearchBarDelegate , UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
 @property (nonatomic, copy) NSArray *albums;
 @property (nonatomic) NSString *searchLetter;
+
+
 
 - (IBAction)reloadButtonAction:(UIBarButtonItem *)sender;
 
@@ -118,10 +121,21 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellID = @"Cell";
-    CellTableViewCell *cell = (CellTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
+    static NSString *cellID2 = @"Cell2";
+    
+    NSString *currentCellId = nil;
+    
+    if (!(indexPath.row % 2)) {
+        currentCellId = cellID2;
+    } else {
+        currentCellId = cellID;
+    }
+    
+    
+    CellTableViewCell *cell = (CellTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:currentCellId forIndexPath:indexPath];
     
     if (cell == nil) {
-        cell = [[CellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell = [[CellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:currentCellId];
     }
 
         Album *album = [self.albums objectAtIndex:indexPath.row];
@@ -133,8 +147,51 @@
     return cell;
 }
 
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//
+//    return 100.0;
+//}
+//
+//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+////    UIView *view = [[UIView alloc] init];
+////    view.backgroundColor = [UIColor greenColor];
+//    UISearchBar *search = [[UISearchBar alloc]init];
+//    search = self.searchBar;
+//
+//    return search;
+//}
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//
+//    if(self.searchBar == nil) {
+//            //allocate the view if it doesn't exist yet
+//        UISearchBar *search = [[UISearchBar alloc]init];
+//        search = self.searchBar;
+//        return search;
+//
+////            //create the button
+////        UITextField *txtField = [[UITextField alloc] initWithFrame:CGRectMake(10, 3, 250, 44)];
+////
+////            //the button should be as big as a table view cell
+////        txtField.borderStyle = UITextBorderStyleRoundedRect;
+//
+//            //set action of the button
+//            //[txtField addTarget:self action:@selector(removeAction:) forControlEvents:UIControlEventTouchUpInside];
+//
+//            //add the button to the view
+//        //[headerManualView addSubview:txtField];
+//    }
+//
+//        //return the view for the footer
+//    return self.searchBar;
+//}
+
+
+
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     return 100.f;
 }
 
@@ -143,6 +200,13 @@
     [self.searchBar resignFirstResponder];
     [self.tableView endEditing:YES];
 }
+
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    CGRect rect = self.tableHeaderView.frame;
+//    rect.origin.y = MIN(0, self.tableView.contentOffset.y);
+//    self.tableHeaderView.frame = rect;
+//}
 
 #pragma mark - Search
 
