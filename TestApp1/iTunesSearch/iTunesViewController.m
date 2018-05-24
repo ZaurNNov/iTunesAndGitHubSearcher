@@ -20,8 +20,6 @@
 @property (nonatomic, copy) NSArray *albums;
 @property (nonatomic) NSString *searchLetter;
 
-
-
 - (IBAction)reloadButtonAction:(UIBarButtonItem *)sender;
 
 @end
@@ -162,32 +160,30 @@
 //    return search;
 //}
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if(self.searchBar == nil) {
+            //allocate the view if it doesn't exist yet
+        UISearchBar *search = [[UISearchBar alloc]init];
+        search = self.searchBar;
+        return search;
+        
+//            //create the button
+//        UITextField *txtField = [[UITextField alloc] initWithFrame:CGRectMake(10, 3, 250, 44)];
 //
-//    if(self.searchBar == nil) {
-//            //allocate the view if it doesn't exist yet
-//        UISearchBar *search = [[UISearchBar alloc]init];
-//        search = self.searchBar;
-//        return search;
-//
-////            //create the button
-////        UITextField *txtField = [[UITextField alloc] initWithFrame:CGRectMake(10, 3, 250, 44)];
-////
-////            //the button should be as big as a table view cell
-////        txtField.borderStyle = UITextBorderStyleRoundedRect;
-//
-//            //set action of the button
-//            //[txtField addTarget:self action:@selector(removeAction:) forControlEvents:UIControlEventTouchUpInside];
-//
-//            //add the button to the view
-//        //[headerManualView addSubview:txtField];
-//    }
-//
-//        //return the view for the footer
-//    return self.searchBar;
-//}
-
-
+//            //the button should be as big as a table view cell
+//        txtField.borderStyle = UITextBorderStyleRoundedRect;
+        
+            //set action of the button
+            //[txtField addTarget:self action:@selector(removeAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+            //add the button to the view
+        //[headerManualView addSubview:txtField];
+    }
+    
+        //return the view for the footer
+    return self.searchBar;
+}
 
 
 

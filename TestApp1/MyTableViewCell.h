@@ -1,0 +1,19 @@
+//
+//  MyTableViewCell.h
+//  TestApp1
+//
+//  Created by Zaur Giyasov on 24/05/2018.
+//  Copyright © 2018 Zaur Giyasov. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface MyTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UIImageView *loginImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subDetailLabel;
+
+
+@end

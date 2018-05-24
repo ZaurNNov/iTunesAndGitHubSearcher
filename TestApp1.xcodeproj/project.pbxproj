@@ -24,7 +24,8 @@
 		CE0842FB20B44D48009ED951 /* GitHubJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842FA20B44D48009ED951 /* GitHubJSONParser.m */; };
 		CE0842FE20B45026009ED951 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0842FD20B45026009ED951 /* User.m */; };
 		CE08430120B45773009ED951 /* UsersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE08430020B45773009ED951 /* UsersTableViewCell.m */; };
-		CE51C4AC20B6A44400F03AF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51C4AB20B6A44400F03AF7 /* ViewController.m */; };
+		CE51C4B220B6B8E900F03AF7 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51C4B120B6B8E900F03AF7 /* MyTableViewCell.m */; };
+		CE51C4B820B6DA7400F03AF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE51C4B620B6DA7300F03AF7 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +61,10 @@
 		CE0842FD20B45026009ED951 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		CE0842FF20B45773009ED951 /* UsersTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UsersTableViewCell.h; sourceTree = "<group>"; };
 		CE08430020B45773009ED951 /* UsersTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewCell.m; sourceTree = "<group>"; };
-		CE51C4AA20B6A44400F03AF7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CE51C4AB20B6A44400F03AF7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CE51C4B020B6B8E900F03AF7 /* MyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		CE51C4B120B6B8E900F03AF7 /* MyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
+		CE51C4B620B6DA7300F03AF7 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = View/ViewController.m; sourceTree = "<group>"; };
+		CE51C4B720B6DA7300F03AF7 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = View/ViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +108,14 @@
 				CE0842B920B2B7B5009ED951 /* Assets.xcassets */,
 				CE0842B620B2B7B5009ED951 /* Main.storyboard */,
 				CE0842BB20B2B7B5009ED951 /* LaunchScreen.storyboard */,
-				CE51C4AA20B6A44400F03AF7 /* ViewController.h */,
-				CE51C4AB20B6A44400F03AF7 /* ViewController.m */,
+				CE51C4B720B6DA7300F03AF7 /* ViewController.h */,
+				CE51C4B620B6DA7300F03AF7 /* ViewController.m */,
+				CE51C4B020B6B8E900F03AF7 /* MyTableViewCell.h */,
+				CE51C4B120B6B8E900F03AF7 /* MyTableViewCell.m */,
+				CE0842FC20B45026009ED951 /* User.h */,
+				CE0842FD20B45026009ED951 /* User.m */,
+				CE0842EB20B31B1B009ED951 /* Album.h */,
+				CE0842EC20B31B1B009ED951 /* Album.m */,
 			);
 			path = TestApp1;
 			sourceTree = "<group>";
@@ -118,8 +127,6 @@
 				CE0842E620B30F0F009ED951 /* iTunesRequest.m */,
 				CE0842E820B319EB009ED951 /* iTunesJSONParser.h */,
 				CE0842E920B319EB009ED951 /* iTunesJSONParser.m */,
-				CE0842EB20B31B1B009ED951 /* Album.h */,
-				CE0842EC20B31B1B009ED951 /* Album.m */,
 			);
 			path = iTunesRequest;
 			sourceTree = "<group>";
@@ -157,8 +164,6 @@
 				CE0842F720B44992009ED951 /* GitHubRequest.m */,
 				CE0842F920B44D48009ED951 /* GitHubJSONParser.h */,
 				CE0842FA20B44D48009ED951 /* GitHubJSONParser.m */,
-				CE0842FC20B45026009ED951 /* User.h */,
-				CE0842FD20B45026009ED951 /* User.m */,
 			);
 			path = GitHubRequest;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE51C4B820B6DA7400F03AF7 /* ViewController.m in Sources */,
 				63A8A4BF20B48AB8001933D2 /* UserDetailsViewController.m in Sources */,
 				CE0842F820B44992009ED951 /* GitHubRequest.m in Sources */,
 				CE0842FB20B44D48009ED951 /* GitHubJSONParser.m in Sources */,
@@ -241,8 +247,8 @@
 				CE0842B520B2B7B5009ED951 /* GitHubViewController.m in Sources */,
 				CE0842AF20B2B7B4009ED951 /* AppDelegate.m in Sources */,
 				CE08430120B45773009ED951 /* UsersTableViewCell.m in Sources */,
+				CE51C4B220B6B8E900F03AF7 /* MyTableViewCell.m in Sources */,
 				CE0842EA20B319EB009ED951 /* iTunesJSONParser.m in Sources */,
-				CE51C4AC20B6A44400F03AF7 /* ViewController.m in Sources */,
 				CE0842C020B2B7B5009ED951 /* main.m in Sources */,
 				CE0842FE20B45026009ED951 /* User.m in Sources */,
 				CE0842ED20B31B1B009ED951 /* Album.m in Sources */,
