@@ -14,11 +14,6 @@
 
 static NSString *iTunesURL = @"http://itunes.apple.com/search?term=%@&limit=200&country=ru&entity=musicTrack";
 
-//+(void) downloadDataFromSearchTerms:(NSString *)searchTerm entity:(NSString *) entityName
-//                 withCompetionBlock:(void (^)(BOOL success, NSArray *albums))complete {
-//
-//}
-
 +(void) downloadDataFromSearchTerms:(NSString *)searchTerm
                  withCompetionBlock:(void (^)(BOOL success, NSArray *albums))complete {
     

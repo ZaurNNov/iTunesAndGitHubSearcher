@@ -12,6 +12,7 @@
 #import "User.h"
 #import "iTunesRequest.h"
 #import "GitHubRequest.h"
+#import "DetailViewController.h"
 
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate , UISearchBarDelegate>
@@ -53,12 +54,13 @@
 
 - (void)refresh {
     
+    [self clearCacheData];
+    
     if (!self.searchLetter) {
         self.searchLetter = @"";
     }
     
     //segment
-    // self.segment.selectedSegmentIndex == 1
     if (self.segment.selectedSegmentIndex == 0) {
         
             // iTunes search
@@ -71,7 +73,9 @@
                     [self loadForiTunesAlbums];
                     
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        self.result = self.albums;
                         [self.myTableView reloadData];
+                        
                     });
                 } else {
                     NSLog(@"Error refresh:  %@", NSStringFromSelector(_cmd));
@@ -90,6 +94,7 @@
                     [self loadForGitHubAlbums];
                     
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        self.result = self.users;
                         [self.myTableView reloadData];
                     });
                 } else {
@@ -98,7 +103,6 @@
             }];
     }
 }
-
 
 - (void)loadForiTunesAlbums {
     
@@ -140,8 +144,8 @@
     }
 }
 
-- (IBAction)reloadButtonAction:(UIBarButtonItem *)sender {
-    [self refresh];
+- (IBAction)clearButtonAction:(UIBarButtonItem *)sender {
+    [self clearAll];
 }
 
 
@@ -151,8 +155,32 @@
     [super viewDidLoad];
     self.title = @"Search";
     self.myTableView.backgroundColor = [UIColor whiteColor];
+    [self.segment addTarget:self action:@selector(segmentChanged) forControlEvents:(UIControlEventValueChanged)];
 }
 
+- (void)segmentChanged
+{
+    [self clearTableView];
+    [self refresh];
+}
+
+-(void) clearAll {
+    self.search.text = @"";
+    self.searchLetter = nil;
+    [self clearCacheData];
+    [self clearTableView];
+}
+
+-(void) clearCacheData {
+    self.users = nil;
+    self.albums = nil;
+}
+
+-(void) clearTableView {
+    self.result = nil;
+    [self.view endEditing:YES];
+    [self.myTableView reloadData];
+}
 
 #pragma mark - Table view data source
 
@@ -185,13 +213,17 @@
     }
     
     // SegmentControl
-    if (self) {
+    
+    if (self.segment.selectedSegmentIndex == 0) {
+        self.users = nil;
         Album *album = [self.albums objectAtIndex:indexPath.row];
         cell.nameLabel.text = album.albumName;
         cell.detailLabel.text = album.artistName;
         cell.subDetailLabel.text = album.trackName;
         cell.loginImageView.image = album.image;
-    } else {
+        
+    } else if (self.segment.selectedSegmentIndex == 1) {
+        self.albums = nil;
         User *user = [self.users objectAtIndex:indexPath.row];
         cell.nameLabel.text = user.login;
         cell.detailLabel.text = [NSString stringWithFormat:@"Login ID: %@", user.idNumber];
@@ -236,13 +268,33 @@
     self.searchLetter = searchBar.text;
 }
 
-//-(void)setSegment:(UISegmentedControl *)segment {
-//
-//}
-//
-//-(UISegmentedControl *)segment {
-//
-//}
+#pragma mark - Seque
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier  isEqual: @"DetailShow"]) {
+        
+        if (self.segment.selectedSegmentIndex == 0) {
+            NSLog(@"%@", NSStringFromSelector(_cmd));
+            
+            DetailViewController *dvc = [segue destinationViewController];
+            NSIndexPath *ip = [self.myTableView indexPathForCell:sender];
+            Album *albumShare = self.albums[ip.item];
+            dvc.albumShared = albumShare;
+        
+        } else if (self.segment.selectedSegmentIndex == 1) {
+            
+            if ([segue.identifier  isEqual: @"DetailShow"]) {
+                NSLog(@"%@", NSStringFromSelector(_cmd));
+                
+                DetailViewController *dvc = [segue destinationViewController];
+                NSIndexPath *ip = [self.myTableView indexPathForCell:sender];
+                User *user = self.users[ip.item];
+                dvc.userShared = user;
+            }
+        }
+    }
+}
 
 @end
 

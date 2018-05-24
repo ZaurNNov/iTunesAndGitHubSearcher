@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Album.h"
+#import "User.h"
 
 
 @interface DetailViewController : UIViewController
 
 @property (nonatomic) Album *albumShared;
-
+@property (nonatomic) User *userShared;
 
 @end

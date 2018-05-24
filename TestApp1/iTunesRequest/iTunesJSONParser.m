@@ -13,7 +13,6 @@
 
 + (NSArray *)parseAlbumsFromData:(NSData *)data {
     
-    
     NSMutableArray *albums = [[NSMutableArray alloc] init];
     
     id json = [NSJSONSerialization JSONObjectWithData:data
@@ -28,7 +27,6 @@
         NSString *trackName = jsonElement[@"trackName"];
         NSString *priceString = [NSString stringWithFormat:@"%@ %@", jsonElement[@"collectionPrice"], jsonElement[@"currency"]];
         NSString *releaseDateString = jsonElement[@"releaseDate"];
-        
         
         Album *album = [[Album alloc] initWithAlbumName:albumName
                                                  artistName:artistName

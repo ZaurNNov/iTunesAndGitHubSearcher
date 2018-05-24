@@ -13,7 +13,6 @@
 
 + (NSArray *)parseUserFromData:(NSData *)data {
     
-    
     NSMutableArray *users = [[NSMutableArray alloc] init];
     
     id json = [NSJSONSerialization JSONObjectWithData:data
@@ -29,7 +28,6 @@
         NSString *urlString = jsonElement[@"url"];
         NSNumber *idNumber = jsonElement[@"id"];
         NSNumber *score = jsonElement[@"score"];
-        
         
         User *user = [[User alloc]initWithUserLogin:login
                                            avatar_ur:avatar_url
