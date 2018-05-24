@@ -26,6 +26,12 @@
 @property (nonatomic, copy) NSArray *users;
 @property (nonatomic) NSString *searchLetter;
 
+@property (nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
+//@property (nonatomic) UIActivityIndicatorView *spiner;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *tableViewSpinner;
+//@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *leftCellSpinner;
+//@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *rightCellSpinner;
+
 @end
 
 @implementation ViewController
@@ -60,19 +66,22 @@
         self.searchLetter = @"";
     }
     
+    [self.tableViewSpinner startAnimating];
+    
     //segment
     if (self.segment.selectedSegmentIndex == 0) {
         
             // iTunes search
             
             [iTunesRequest downloadDataFromSearchTerms:self.searchLetter withCompetionBlock:^(BOOL success, NSArray *albums) {
-                
+                sleep(1);
                 if (success) {
                     self.albums = albums;
                     self.result = self.albums;
                     [self loadForiTunesAlbums];
                     
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.tableViewSpinner stopAnimating];
                         self.result = self.albums;
                         [self.myTableView reloadData];
                         
@@ -87,13 +96,14 @@
         // GitHub search
             
             [GitHubRequest downloadDataFromSearchTerms:self.searchLetter withCompetionBlock:^(BOOL success, NSArray *users) {
-                
+                sleep(1);
                 if (success) {
                     self.users = users;
                     self.result = self.users;
                     [self loadForGitHubAlbums];
                     
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.tableViewSpinner stopAnimating];
                         self.result = self.users;
                         [self.myTableView reloadData];
                     });
@@ -138,6 +148,7 @@
                 NSIndexPath *ip = [NSIndexPath indexPathForItem:i inSection:0];
                 MyTableViewCell *cell = (MyTableViewCell *)[self.myTableView cellForRowAtIndexPath:ip];
                 cell.imageView.alpha = 1;
+                [self.tableViewSpinner stopAnimating];
                 [self.myTableView reloadData];
             });
         }];
@@ -153,15 +164,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self.tableViewSpinner stopAnimating];
+//    [self.leftCellSpinner stopAnimating];
+//    [self.rightCellSpinner stopAnimating];
+    
+    //self.tableViewHeightConstraint.constant = 0;
+//    self.spiner = [[UIActivityIndicatorView alloc] init];
+//    self.spiner.frame = CGRectMake(0, 0, 50, 50);
+//    self.spiner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    //////
+//    [self.myTableView addSubview:self.tableViewSpinner];
+//    self.myTableView.translatesAutoresizingMaskIntoConstraints = NO;
+//    self.tableViewSpinner.translatesAutoresizingMaskIntoConstraints = NO;
+//    NSLayoutConstraint *x = [self.myTableView.centerXAnchor constraintEqualToAnchor:self.tableViewSpinner.centerXAnchor];
+//    NSLayoutConstraint *y = [self.myTableView.centerYAnchor constraintEqualToAnchor:self.tableViewSpinner.centerYAnchor];
+//    [NSLayoutConstraint activateConstraints:@[x,y]];
+    
     self.title = @"Search";
     self.myTableView.backgroundColor = [UIColor whiteColor];
     [self.segment addTarget:self action:@selector(segmentChanged) forControlEvents:(UIControlEventValueChanged)];
 }
 
-- (void)segmentChanged
-{
+- (void)segmentChanged {
     [self clearTableView];
-    [self refresh];
+    [self searchEnge];
 }
 
 -(void) clearAll {
@@ -177,6 +203,7 @@
 }
 
 -(void) clearTableView {
+    [self.tableViewSpinner stopAnimating];
     self.result = nil;
     [self.view endEditing:YES];
     [self.myTableView reloadData];
@@ -248,21 +275,26 @@
 #pragma mark - Search
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    if (!searchBar.text) {
+    [self searchEnge];
+    [self refresh];
+}
+
+-(void)searchEnge{
+    if (!self.search.text) {
         return;
     } else {
-        NSLog(@"%@", searchBar.text);
-        self.searchLetter = searchBar.text;
+        NSLog(@"%@", self.search.text);
+        [self clearTableView];
+        self.searchLetter = self.search.text;
         [self.view endEditing:YES];
-        [self refresh];
     }
 }
 
 // Clear searchBar;
--(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    searchBar.text = @"";
-    return YES;
-}
+//-(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+//    searchBar.text = @"";
+//    return YES;
+//}
 
 -(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
     self.searchLetter = searchBar.text;
